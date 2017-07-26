@@ -10,8 +10,7 @@
     - software-properties-common
 
 - name: add aptkey
-  apt_key:
-    url: https://download.docker.com/linux/debian/gpg
+  shell: curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 
 - name: add repo
   apt_repository: 
