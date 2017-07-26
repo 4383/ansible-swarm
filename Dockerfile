@@ -8,4 +8,12 @@ RUN apk update && \
 
 RUN rc-update add sshd
 
-CMD while : do; sleep 1000; done
+RUN adduser -D -h /home/user user
+RUN mkdir /home/user/.ssh
+COPY id_rsa.pub /home/user/.ssh/authorized_keys
+RUN chmod 700 /home/user/.ssh
+RUN chmod 644 /home/user/.ssh/*
+USER user
+WORKDIR /home/user
+
+CMD while : ; do sleep 1000; done
