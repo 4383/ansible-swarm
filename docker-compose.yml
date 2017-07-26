@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+    manager1:
+        build: .
+    worker1:
+        image: .
+    worker2:
+        image: .
