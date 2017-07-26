@@ -4,6 +4,6 @@ services:
     manager1:
         build: .
     worker1:
-        image: .
+        build: .
     worker2:
-        image: .
+        build: .
